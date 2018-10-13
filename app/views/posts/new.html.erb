@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="header">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2>New Post</h2>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <%= form_for( @post , remote: true) do |f| %>
+    <div class="field form-group">
+      <%= f.label (:author) %>
+      <%= f.text_field (:author), class: 'form-control' %>
+    </div>
+    <div class="field form-group">
+      <%= f.label (:title) %>
+      <%= f.text_field (:title), class: 'form-control' %>
+    </div>
+    <div class="field form-group">
+      <%= f.label (:category) %>
+      <%= f.text_field (:category), class: 'form-control' %>
+    </div>
+    <div class="field form-group">
+      <%= f.label (:content) %>
+      <%= f.text_area (:content), class: 'form-control' %>
+    </div>
+    <%= f.submit "Create Post", class: 'btn btn-success' %>
+  <% end %>
+
+</div>

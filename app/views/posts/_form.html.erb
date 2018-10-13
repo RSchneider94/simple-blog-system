@@ -1,0 +1,19 @@
+<%= form_with(model: post, local: true) do |f| %>
+  <div class="field form-group">
+    <%= f.label (:author) %>
+    <%= f.text_field (:author), class: 'form-control' %>
+  </div>
+  <div class="field form-group">
+    <%= f.label (:title) %>
+    <%= f.text_field (:title), class: 'form-control' %>
+  </div>
+  <div class="field form-group">
+    <%= f.label (:category) %>
+    <%= f.text_field (:category), class: 'form-control' %>
+  </div>
+  <div class="field form-group">
+    <%= f.label (:content) %>
+    <%= f.text_area (:content), class: 'form-control' %>
+  </div>
+  <%= f.submit "Create Post", class: 'actions btn btn-success' %>
+<% end %>

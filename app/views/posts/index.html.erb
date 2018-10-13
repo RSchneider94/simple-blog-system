@@ -3,20 +3,23 @@
     <div class="row">
       <div class="col-12 text-center">
         <h2>Posts</h2>
-        <%= link_to  "New Post", "posts/new" %>
+        <%= link_to "New Post", new_post_path %>
       </div>
     </div>
   </div>
   <hr>
+  <% if notice %>
+    <div><%= notice %></div>
+  <% end %>
   <div class="row posts">
       <% @posts.each do |post| %>
       <div class="col-6">
         <div class="card">
           <div class="card-body">
             <div class="post-title text-center">
-              <h3><%= post.title %></h3>
+              <h3><%= link_to post.title, post %></h3>
             </div>
-            <div class="post-info text-center">
+            <div class="post-meta text-center">
               <small>Author: <%= post.author %></small> |
               <small>Category: <%= post.category %></small> |
               <small>Posted at: <%= post.created_at %></small>

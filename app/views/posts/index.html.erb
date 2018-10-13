@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="header">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2>Posts</h2>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row posts">
+      <% @posts.each do |post| %>
+      <div class="col-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="post-title text-center">
+              <h3><%= post.title %></h3>
+            </div>
+            <div class="post-info text-center">
+              <small>Author: <%= post.author %></small> |
+              <small>Category: <%= post.category %></small> |
+              <small>Posted at: <%= post.created_at %></small>
+            </div>
+            <hr>
+            <div class="post-content text-justify">
+              <p>
+                <%= post.content.size > 20 ? 
+                  post.content.slice(0..60) + "..." : 
+                  post.content %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+  </div>
+</div>

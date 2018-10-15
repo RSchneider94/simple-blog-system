@@ -34,6 +34,8 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy; end #todo
+
   private
   def post_params
     params.require(:post).permit(:author, :title, :category_id, :content)

@@ -17,7 +17,12 @@
       <div class="col-4"><%= @post.author %></div>
       <div class="col-4"><%= @post.category %></div>
       <div class="col-4"><%= @post.created_at %></div>
-      <%= link_to  "Edit Post", edit_post_path %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <div class="row">
+      <%= link_to  "Edit Post", edit_post_path, class: 'btn btn-warning' %>
     </div>
   </div>
 

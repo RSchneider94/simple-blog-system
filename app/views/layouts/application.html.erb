@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BlogSystem</title>
+    <title>Simple Blog System</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,23 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Simple Blog System</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <%= link_to "Home", root_path, class: active_class?(root_path) %>
+          <%= link_to "Posts", posts_path, class: active_class?(posts_path) %>
+        </div>
+      </div>
+    </nav>
+    <% if notice %>
+      <div class="alert alert-dark" role="alert">
+        <%= notice %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

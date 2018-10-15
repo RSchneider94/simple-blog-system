@@ -15,5 +15,8 @@
     <%= f.label (:content) %>
     <%= f.text_area (:content), class: 'form-control' %>
   </div>
-  <%= f.submit "Create Post", class: 'actions btn btn-success' %>
+  <div class="actions">
+    <%= f.submit class: 'btn btn-success' %>
+    <%= link_to  "Back", "/posts/", class: 'btn btn-primary' %>
+  </div>
 <% end %>

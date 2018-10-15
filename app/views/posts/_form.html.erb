@@ -8,8 +8,8 @@
     <%= f.text_field (:title), class: 'form-control' %>
   </div>
   <div class="field form-group">
-    <%= f.label (:category) %>
-    <%= f.text_field (:category), class: 'form-control' %>
+    <%= f.label (:category_id) %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {class: 'form-control'}) %>
   </div>
   <div class="field form-group">
     <%= f.label (:content) %>

@@ -8,14 +8,20 @@
   </div>
   <hr>
 
-  <p><%= @post.content %></p>
+  <div class="post-content">
+    <div class="row">
+      <div class="col-12">
+        <%= simple_format(@post.content, class: 'lead') %>
+      </div>
+    </div>
+  </div>
 
   <hr>
 
   <div class="post-meta text-center">
     <div class="row">
       <div class="col-4"><%= @post.author %></div>
-      <div class="col-4"><%= @post.category %></div>
+      <div class="col-4"><%= @post.category.name %></div>
       <div class="col-4"><%= @post.created_at %></div>
     </div>
   </div>

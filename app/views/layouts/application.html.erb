@@ -18,9 +18,24 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
+        <div class="navbar-nav mr-auto">
           <%= link_to "Home", root_path, class: active_class?(root_path) %>
           <%= link_to "Posts", posts_path, class: active_class?(posts_path) %>
+        </div>
+        <div class="navbar-nav">
+          <% if user_signed_in? %>
+            <%= link_to "Logout",
+                        destroy_user_session_path,
+                        method: :delete,
+                        class: 'nav-item nav-link' %>
+          <% else %>
+            <%= link_to "Login",
+                        new_user_session_path,
+                        class: 'nav-item nav-link' %>
+            <%= link_to "Register",
+                        new_user_registration_path,
+                        class: 'nav-item nav-link' %>
+          <% end %>
         </div>
       </div>
     </nav>

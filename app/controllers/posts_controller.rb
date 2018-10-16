@@ -33,7 +33,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-
+    if @post.delete
+      redirect_to posts_path, notice: "The post was successfully deleted!"
+    else
+      render 'edit'
+    end
   end
 
   private

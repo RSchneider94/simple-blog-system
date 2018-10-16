@@ -18,9 +18,11 @@
   <div class="actions">
     <%= link_to  "Back", "/posts/", class: 'btn btn-primary' %>
     <%= f.submit class: 'btn btn-success' %>
-    <%= link_to  "Delete Post", post_path,
-                  method: :delete,
-                  data: { confirm: "That action can't be undone! Are you sure?" },
-                  class: 'btn btn-danger' %>
+    <% if request.path.include? "edit" %>
+      <%= link_to  "Delete Post", post_path,
+                    method: :delete,
+                    data: { confirm: "That action can't be undone! Are you sure?" },
+                    class: 'btn btn-danger' %>
+    <% end %>
   </div>
 <% end %>

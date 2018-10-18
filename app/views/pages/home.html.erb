@@ -7,10 +7,18 @@
     </div>
   </div>
   <hr>
-  <div class="row">
-    <div class="col-12 text-center">
-      <p>This page is just to have something to test the routes.</p>
-      <p>Click <a href="/posts">here</a> to see the posts of blog.</p>
+  <div class="blog-categories text-center">
+    <div class="row">
+      <div class="col-12">
+        <h3>Blog Categories</h3>
+      </div>
+    </div>
+    <div class="row">
+      <% @categories.each do |category| %>
+        <div class="col-2">
+          <p><%= category.name %></p>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

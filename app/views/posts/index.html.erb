@@ -4,7 +4,11 @@
       <div class="col-12 text-center">
         <h2>Posts</h2>
         <% if user_signed_in? %>
-          <%= link_to "New Post", new_post_path %>
+        <div class="actions text-right">
+          <%= link_to '<i class="fas fa-pencil-alt text-dark"></i> New Post'.html_safe,
+              new_post_path,
+              class: 'text-dark' %>
+        </div>
         <% end %>
       </div>
     </div>
@@ -19,9 +23,9 @@
               <h3><%= link_to post.title, post %></h3>
             </div>
             <div class="post-meta text-center">
-              <small>Author: <%= post.author %></small> |
-              <small>Category: <%= post.category.name %></small> |
-              <small>Posted at: <%= post.created_at %></small>
+              <small><i class="fas fa-user"></i> <%= post.author %></small> |
+              <small><i class="fas fa-tags"></i> <%= post.category.name %></small> |
+              <small><i class="fas fa-clock"></i> Posted at: <%= post.created_at.strftime("%d.%m.%Y %H:%M") %></small>
             </div>
             <hr>
             <div class="post-content text-justify">

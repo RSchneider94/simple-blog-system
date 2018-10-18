@@ -1,7 +1,7 @@
 <%= form_with(model: post, local: true) do |f| %>
   <div class="field form-group">
     <%= f.label (:author) %>
-    <%= f.text_field (:author), class: 'form-control' %>
+    <%= f.text_field (:author), class: 'form-control', readonly: true, value: current_user.full_name %>
   </div>
   <div class="field form-group">
     <%= f.label (:title) %>
